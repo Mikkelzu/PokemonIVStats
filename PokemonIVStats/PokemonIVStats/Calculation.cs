@@ -10,6 +10,18 @@ namespace PokemonIVStats
 {
     public class Calculation
     {
+
+
+
+
+
+
+
+
+
+
+
+
         public static int percentagePerfectionIV = 0;
 
         public static int CalculatePerfection(int health, int atk, int def, int spatk, int spdef, int speed, int level, MainWindow _main)
@@ -141,6 +153,10 @@ EV = (((HP - 10) * 100) / Level - 2*Base - IV - 100) * 4
 IV = ((Stat/Nature - 5) * 100) / Level - 2*Base - EV/4
 EV = (((Stat/Nature - 5) * 100) / Level - 2*Base - IV) * 4
 
+
+                CALCULATING IV = 
+                IV = (EV )
+
 */
                 Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
 
@@ -153,14 +169,20 @@ EV = (((Stat/Nature - 5) * 100) / Level - 2*Base - IV) * 4
 
                 var MaxTotal = selectedPok.Total;
 
-                var EV = ((atk - 5) * 100 / level - 2*maxAtk - atk) * 4; 
+                
 
+                var IV = (((atk / 10) - 5 * 100) / level - 2) * maxAtk - atk / 4;
+
+                var EV = (((atk / 10) - 5 * 100 / level - 2) * maxAtk) - IV * 4;
+
+                var ev2 = EV / MaxTotal;
 
                 //var newSpAtk = (spatk / 10) + spatk;
                 //var newAtk = atk - (atk / 10);
                 //var newCalc = health + newAtk + def + newSpAtk + spdef + speed;
-           
-                percentagePerfectionIV = (int)Math.Round((double)(100 * EV) / MaxTotal);
+
+                //percentagePerfectionIV = (int)Math.Round((double)(100 * EV) / MaxTotal);
+                return ev2;
             }
             else if (nameNature == "Mild")
             {

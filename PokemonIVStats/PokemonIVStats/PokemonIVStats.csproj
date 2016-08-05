@@ -71,7 +71,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BaseStats.cs" />
     <Compile Include="Calculation.cs" />
+    <Compile Include="ListOfPokes.cs" />
     <Compile Include="Nature.cs" />
     <Compile Include="Pokemon.cs" />
     <Compile Include="GetSprite.cs" />
