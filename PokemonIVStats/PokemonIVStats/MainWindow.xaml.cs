@@ -60,9 +60,7 @@ namespace PokemonIVStats
         }
         private void cmbSelectPoke_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             lblOutput.Content = "";
-
             var currentPokemonIndex = cmbSelectPoke.SelectedValue;
 
 
@@ -72,6 +70,16 @@ namespace PokemonIVStats
 
             // show shiny sprite
             pokemonShinySpriteImageBox.Source = GetSprite.getShinySprite(currentPokemonIndex, this);
+
+            if (pokemonSpriteImageBox.Source == null)
+            {
+                lblOutput.Content = "No Sprite not found.";
+            }
+            else if (pokemonShinySpriteImageBox.Source == null)
+            {
+                lblOutput.Content = "Shiny Sprite not found.";
+            }
+           
 
         }
 
