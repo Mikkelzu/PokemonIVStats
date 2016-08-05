@@ -1,8 +1,8 @@
-Bashful	N/A	N/A
-Docile	N/A	N/A
-Hardy	N/A	N/A
-Quirky	N/A	N/A
-Serious	N/A	N/A
+Bashful;None;None
+Docile;None;None
+Hardy;None;None
+Quirky;None;None
+Serious;None;None
 Adaman;Attack;Special Attack
 Brave;Attack;Speed
 Lonely;Attack;Defense

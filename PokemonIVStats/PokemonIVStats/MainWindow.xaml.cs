@@ -26,9 +26,17 @@ namespace PokemonIVStats
         public MainWindow()
         {
             InitializeComponent();
+            InitAll();
 
             //call to filling the list
             FillPokemonList();
+            FillNatureList();
+         
+        }
+
+        public void InitAll()
+        {
+            Pokemon.Init();
             Nature.Init();
         }
 
@@ -43,7 +51,14 @@ namespace PokemonIVStats
             }
         }
 
-        private void cmbSelectPoke_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void FillNatureList()
+         {
+             foreach (Nature nat in Nature.NatureList)
+             {
+                 cmbSelectNature.Items.Add(nat);
+             }
+         }
+private void cmbSelectPoke_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var currentPokemonIndex = cmbSelectPoke.SelectedValue;
 
