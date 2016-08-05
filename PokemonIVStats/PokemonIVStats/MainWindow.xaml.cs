@@ -85,14 +85,14 @@ namespace PokemonIVStats
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
-            if (txtHP.Text == "" || txtAttack.Text == "" || txtDefense.Text == "" || txtSpAtk.Text == "" || txtSpDef.Text == "" || txtSpeed.Text == "")
+            if (txtHP.Text == "" || txtAttack.Text == "" || txtDefense.Text == "" || txtSpAtk.Text == "" || txtSpDef.Text == "" || txtSpeed.Text == "" || txtLevel.Text == "")
             {
                 lblOutput.Content = "One or more values not filled in.\nPlease fill these in.";
             }
             else
             {
                 var statsCalculated = Calculation.CalculatePerfection(Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
-               Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text), Convert.ToInt32(txtSpeed.Text), this);
+               Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text), Convert.ToInt32(txtSpeed.Text), Convert.ToInt32(txtLevel.Text), this);
 
                 // -1 is default case of saying that the pokemon doesnt exist (if theres a new one not implemented yet)
                 if (statsCalculated == -1)

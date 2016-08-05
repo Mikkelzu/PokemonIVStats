@@ -12,7 +12,7 @@ namespace PokemonIVStats
     {
         public static int percentagePerfectionIV = 0;
 
-        public static int CalculatePerfection(int health, int atk, int def, int spatk, int spdef, int speed, MainWindow _main)
+        public static int CalculatePerfection(int health, int atk, int def, int spatk, int spdef, int speed, int level, MainWindow _main)
         {
             Nature selectedNat = (Nature)_main.cmbSelectNature.SelectedItem;
 
@@ -122,15 +122,45 @@ namespace PokemonIVStats
             }
             else if (nameNature == "Modest")
             {
-                var newSpAtk = (spatk / 10) + spatk;
-                var newAtk = atk - (atk / 10);
-                var newCalc = health + newAtk + def + newSpAtk + spdef + speed;
 
+                /*
+                 Formula for IV?
+ HP = ((2*Base + IV + EV/4 + 100) * Level) / 100 + 10
+Stat = (((2*Base + IV + EV/4) * Level) / 100 + 5) * Nature
+
+
+                ((HP - 10) * 100) / Level = 2*Base + IV + EV/4 + 100
+
+IV = ((HP - 10) * 100) / Level - 2*Base - EV/4 - 100
+EV = (((HP - 10) * 100) / Level - 2*Base - IV - 100) * 4
+
+
+
+((Stat/Nature - 5) * 100) / Level = 2*Base + IV + EV/4
+
+IV = ((Stat/Nature - 5) * 100) / Level - 2*Base - EV/4
+EV = (((Stat/Nature - 5) * 100) / Level - 2*Base - IV) * 4
+
+*/
                 Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
+
+                var maxHP =selectedPok.Hp;
+                var maxAtk = selectedPok.Attack;
+                var maxDef = selectedPok.Defense;
+                var maxSpAtk = selectedPok.SpecialAttack;
+                var maxSpDef = selectedPok.SpecialDefense;
+                var maxSpeed = selectedPok.Speed;
 
                 var MaxTotal = selectedPok.Total;
 
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
+                var EV = ((atk - 5) * 100 / level - 2*maxAtk - atk); 
+
+
+                //var newSpAtk = (spatk / 10) + spatk;
+                //var newAtk = atk - (atk / 10);
+                //var newCalc = health + newAtk + def + newSpAtk + spdef + speed;
+           
+                percentagePerfectionIV = (int)Math.Round((double)(100 * EV) / MaxTotal);
             }
             else if (nameNature == "Mild")
             {

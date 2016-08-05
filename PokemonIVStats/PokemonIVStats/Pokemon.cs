@@ -20,6 +20,8 @@ namespace PokemonIVStats
         private int specialDefense_ = 0;
         private int speed_ = 0;
 
+        private int _level = 0;
+
         public static void Init()
         {
             try
@@ -110,6 +112,12 @@ namespace PokemonIVStats
         public int Total
         {
             get { return total_; }
+        }
+
+
+        public int Level
+        {
+            get { return _level; }
         }
 
         public override string ToString()
