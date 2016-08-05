@@ -79,8 +79,6 @@ namespace PokemonIVStats
             {
                 lblOutput.Content = "Shiny Sprite not found.";
             }
-           
-
         }
 
 
@@ -93,11 +91,13 @@ namespace PokemonIVStats
             }
             else
             {
-                var statsCalculated = Calculation.CalculatePerfection(Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
-               Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text), Convert.ToInt32(txtSpeed.Text), Convert.ToInt32(txtLevel.Text), this);
+                // var statsCalculated = Calculation.CalculatePerfection(Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
+                //Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text), Convert.ToInt32(txtSpeed.Text), Convert.ToInt32(txtLevel.Text), this);
+
+                var statsCalculatedTEST = 1;
 
                 // -1 is default case of saying that the pokemon doesnt exist (if theres a new one not implemented yet)
-                if (statsCalculated == -1)
+                if (statsCalculatedTEST == -1)
                 {
                     lblOutput.Content = "No Pokemon data found.";
                 }
@@ -106,7 +106,9 @@ namespace PokemonIVStats
                     //something doesnt seem right... calculation is wrong or stats are wrong?
                     Pokemon poke = (Pokemon)cmbSelectPoke.SelectedItem;
                     //lblOutput.Content = "Your " + poke.Name + " has " + statsCalculated + "% Perfect IV stats.";
-                    lblOutput.Content = "Your " + poke.Name + " has " + statsCalculated + " EV stats.";
+                    lblMaximumAttack.Content = poke.Attack;
+
+                    //lblOutput.Content = "Your " + poke.Name + " has " + statsCalculated + " EV stats.";
                 }
             }
         }

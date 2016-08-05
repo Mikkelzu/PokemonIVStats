@@ -10,7 +10,6 @@ namespace PokemonIVStats
 
         public static List<Pokemon> pokemonList = new List<Pokemon>();
 
-        private int id_ = 0;
         private string name_ = "";
         private int total_ = 0;
         private int hp_ = 0;
@@ -20,23 +19,21 @@ namespace PokemonIVStats
         private int specialDefense_ = 0;
         private int speed_ = 0;
 
-        private int _level = 0;
-
         public static void Init()
         {
             try
             {
-                using (StreamReader sr = new StreamReader("Pokemon/pokemondata.txt"))
+                using (StreamReader sr = new StreamReader("Pokemon/attack_stats.txt"))
                 {
                     string line = "";
                     while ((line = sr.ReadLine()) != null)
                     {
                         string[] spl = line.Split(';');
-                        if (spl.Length == 9)
+                        if (spl.Length == 2) //change
                         {
                             try
                             {
-                                new Pokemon(Convert.ToInt32(spl[0]), spl[1], Convert.ToInt32(spl[2]), Convert.ToInt32(spl[3]), Convert.ToInt32(spl[4]), Convert.ToInt32(spl[5]), Convert.ToInt32(spl[6]), Convert.ToInt32(spl[7]), Convert.ToInt32(spl[8]));
+                                new Pokemon(spl[0], Convert.ToInt32(spl[1])); //todo add more
                             }
                             catch (Exception ex)
                             {
@@ -53,27 +50,15 @@ namespace PokemonIVStats
             }
         }
 
-        public Pokemon(int id, string name, int total, int hp, int attack, int defense, int specialAttack, int specialDefense, int speed)
+        public Pokemon(string name, int attack)
         {
-
-            id_ = id;
             name_ = name;
-            total_ = total;
-            hp_ = hp;
             attack_ = attack;
-            defense_ = defense;
-            specialAttack_ = specialAttack;
-            specialDefense_ = specialDefense;
-            speed_ = speed;
-
+            
             pokemonList.Add(this);
         }
 
-        public int Id
-        {
-            get { return id_; }
-        }
-
+       
         public string Name
         {
             get { return name_; }
@@ -112,12 +97,6 @@ namespace PokemonIVStats
         public int Total
         {
             get { return total_; }
-        }
-
-
-        public int Level
-        {
-            get { return _level; }
         }
 
         public override string ToString()

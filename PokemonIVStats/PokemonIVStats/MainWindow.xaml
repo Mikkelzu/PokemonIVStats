@@ -11,29 +11,23 @@
 
     <!-- your content -->
     <Grid>
-        <TextBox TabIndex="1" Controls:TextBoxHelper.Watermark="HP"  x:Name="txtHP" HorizontalAlignment="Left" Height="23" Margin="157,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
-        <ComboBox TabIndex="0" Controls:TextBoxHelper.Watermark="List of Pokemon"  x:Name="cmbSelectPoke" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top" Width="173" SelectionChanged="cmbSelectPoke_SelectionChanged"/>
-        <Button TabIndex="8" x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="542,433,0,0" VerticalAlignment="Top" Width="75" Click="btnCalculate_Click"/>
-        <Image x:Name="pokemonSpriteImageBox" HorizontalAlignment="Left" Height="100" Margin="265,62,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="pokemonShinySpriteImageBox" HorizontalAlignment="Left" Height="100" Margin="424,33,0,0" VerticalAlignment="Top" Width="100"/>
-        <TextBox TabIndex="2" Controls:TextBoxHelper.Watermark="Attack"  x:Name="txtAttack" HorizontalAlignment="Left" Height="23" Margin="157,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
-        <TextBox TabIndex="3" Controls:TextBoxHelper.Watermark="Defense"  x:Name="txtDefense" HorizontalAlignment="Left" Height="23" Margin="157,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
-        <TextBox TabIndex="4" Controls:TextBoxHelper.Watermark="Sp. Atk"  x:Name="txtSpAtk" HorizontalAlignment="Left" Height="23" Margin="157,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
-        <TextBox TabIndex="5" Controls:TextBoxHelper.Watermark="Sp. Def"  x:Name="txtSpDef" HorizontalAlignment="Left" Height="23" Margin="157,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
-        <TextBox TabIndex="6" Controls:TextBoxHelper.Watermark="Speed"  x:Name="txtSpeed" HorizontalAlignment="Left" Height="23" Margin="157,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
-        <Label x:Name="lblOutput" Content="" HorizontalAlignment="Left" Margin="355,138,0,0" VerticalAlignment="Top" Height="70" Width="278" FontSize="16"/>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="558">
+        <TextBox TabIndex="1" Controls:TextBoxHelper.Watermark="HP"  x:Name="txtHP" HorizontalAlignment="Left" Height="23" Margin="29,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <ComboBox TabIndex="0" Controls:TextBoxHelper.Watermark="List of Pokemon"  x:Name="cmbSelectPoke" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top" Width="194" SelectionChanged="cmbSelectPoke_SelectionChanged"/>
+        <Button TabIndex="8" x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="282,449,0,0" VerticalAlignment="Top" Width="75" Click="btnCalculate_Click"/>
+        <Image x:Name="pokemonSpriteImageBox" HorizontalAlignment="Left" Height="100" Margin="271,40,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="pokemonShinySpriteImageBox" HorizontalAlignment="Left" Height="100" Margin="430,40,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox TabIndex="2" Controls:TextBoxHelper.Watermark="Attack"  x:Name="txtAttack" HorizontalAlignment="Left" Height="23" Margin="29,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox TabIndex="3" Controls:TextBoxHelper.Watermark="Defense"  x:Name="txtDefense" HorizontalAlignment="Left" Height="23" Margin="29,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox TabIndex="4" Controls:TextBoxHelper.Watermark="Sp. Atk"  x:Name="txtSpAtk" HorizontalAlignment="Left" Height="23" Margin="29,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox TabIndex="5" Controls:TextBoxHelper.Watermark="Sp. Def"  x:Name="txtSpDef" HorizontalAlignment="Left" Height="23" Margin="29,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox TabIndex="6" Controls:TextBoxHelper.Watermark="Speed"  x:Name="txtSpeed" HorizontalAlignment="Left" Height="23" Margin="29,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <Label x:Name="lblOutput" Content="" HorizontalAlignment="Left" Margin="386,182,0,0" VerticalAlignment="Top" Height="70" Width="278" FontSize="16"/>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="664">
             <Button Background="White" Content="Settings" Foreground="Black"/>
         </Menu>
-        <ComboBox TabIndex="0" Controls:TextBoxHelper.Watermark="List of Natures"  x:Name="cmbSelectNature" HorizontalAlignment="Left" Margin="29,94,0,0" VerticalAlignment="Top" Width="173" SelectionChanged="cmbSelectPoke_SelectionChanged"/>
-        <TextBox TabIndex="9" Controls:TextBoxHelper.Watermark="Level" x:Name="txtLevel" HorizontalAlignment="Left" Height="23" Margin="157,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"/>
-       
-        <TextBox TabIndex="1" Controls:TextBoxHelper.Watermark="HP EV"  x:Name="healthEV" HorizontalAlignment="Left" Height="23" Margin="10,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
-        <TextBox TabIndex="2" Controls:TextBoxHelper.Watermark="Attack EV"  x:Name="attackEV" HorizontalAlignment="Left" Height="23" Margin="10,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
-        <TextBox TabIndex="3" Controls:TextBoxHelper.Watermark="Defense EV"  x:Name="defenseEV" HorizontalAlignment="Left" Height="23" Margin="10,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
-        <TextBox TabIndex="4" Controls:TextBoxHelper.Watermark="Sp. Atk EV"  x:Name="spatkEV" HorizontalAlignment="Left" Height="23" Margin="10,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
-        <TextBox TabIndex="5" Controls:TextBoxHelper.Watermark="Sp. Def EV"  x:Name="spdefEV" HorizontalAlignment="Left" Height="23" Margin="10,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
-        <TextBox TabIndex="6" Controls:TextBoxHelper.Watermark="Speed EV"  x:Name="speedEV" HorizontalAlignment="Left" Height="23" Margin="10,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
+        <ComboBox TabIndex="0" Controls:TextBoxHelper.Watermark="List of Natures"  x:Name="cmbSelectNature" HorizontalAlignment="Left" Margin="29,94,0,0" VerticalAlignment="Top" Width="194" SelectionChanged="cmbSelectPoke_SelectionChanged"/>
+        <TextBox TabIndex="9" Controls:TextBoxHelper.Watermark="Level" x:Name="txtLevel" HorizontalAlignment="Left" Height="23" Margin="156,448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46"/>
+        <Label x:Name="lblMaximumAttack" Content="" HorizontalAlignment="Left" Margin="282,211,0,0" VerticalAlignment="Top" Width="61"/>
 
 
     </Grid>
