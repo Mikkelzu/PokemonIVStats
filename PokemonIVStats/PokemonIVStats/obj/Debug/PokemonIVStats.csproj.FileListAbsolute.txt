@@ -19,4 +19,3 @@ C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\o
 C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\obj\Debug\App.baml
 C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\obj\Debug\Resources\Icons.baml
 C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\obj\Debug\Resources\IconsNonShared.baml
-C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\obj\Debug\PokemonIVStats_Content.g.cs
