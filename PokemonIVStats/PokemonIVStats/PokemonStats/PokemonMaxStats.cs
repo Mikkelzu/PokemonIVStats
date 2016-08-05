@@ -20,24 +20,28 @@ namespace PokemonIVStats.PokemonStats
             return hp + atk + def + spatk + spdef + speed;
         }
 
-        public void Ivysaur()
+        public static int Ivysaur()
         {
-            GetIV.HP = 60;
-            GetIV.Attack = 62;
-            GetIV.Defense = 63;
-            GetIV.SpecialAttack = 80;
-            GetIV.SpecialDefense = 80;
-            GetIV.Speed = 60;
+            var hp = GetIV.HP = 60;
+            var atk = GetIV.Attack = 62;
+            var def = GetIV.Defense = 63;
+            var spatk = GetIV.SpecialAttack = 80;
+            var spdef = GetIV.SpecialDefense = 80;
+            var speed = GetIV.Speed = 60;
+
+            return hp + atk + def + spatk + spdef + speed;
         }
 
-        public void Venasaur()
+        public static int Venasaur()
         {
-            GetIV.HP = 80;
-            GetIV.Attack = 82;
-            GetIV.Defense = 83;
-            GetIV.SpecialAttack = 100;
-            GetIV.SpecialDefense = 100;
-            GetIV.Speed = 80;
+            var hp = GetIV.HP = 80;
+            var atk = GetIV.Attack = 82;
+            var def = GetIV.Defense = 83;
+            var spatk = GetIV.SpecialAttack = 100;
+            var spdef = GetIV.SpecialDefense = 100;
+            var speed = GetIV.Speed = 80;
+
+            return hp + atk + def + spatk + spdef + speed;
         }
     }
 }

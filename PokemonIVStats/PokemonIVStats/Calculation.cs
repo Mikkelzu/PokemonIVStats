@@ -14,13 +14,20 @@ namespace PokemonIVStats
         {
             var totalOwnedPokemon = health + atk + def + spatk + spdef + speed;
 
-            //this is 100%
             switch (_main.cmbSelectPoke.SelectedValue.ToString())
             {
                 case "Bulbasaur":
-                    var totalMaxPokemon = PokemonStats.PokemonMaxStats.Bulbasaur();
-                    int percentage = (int)Math.Round((double)(100 * totalOwnedPokemon) / totalMaxPokemon);
-                    return percentage;
+                    var bulb = PokemonStats.PokemonMaxStats.Bulbasaur();
+                    int percentagebulb = (int)Math.Round((double)(100 * totalOwnedPokemon) / bulb);
+                    return percentagebulb;
+                case "Ivysaur":
+                    var ivy = PokemonStats.PokemonMaxStats.Ivysaur();
+                    int percentageivy = (int)Math.Round((double)(100 * totalOwnedPokemon) / ivy);
+                    return percentageivy;
+                case "Venasaur":
+                    var vena = PokemonStats.PokemonMaxStats.Ivysaur();
+                    int percentagevena = (int)Math.Round((double)(100 * totalOwnedPokemon) / vena);
+                    return percentagevena;
                 default:
                     return -1;
             }

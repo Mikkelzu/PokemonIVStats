@@ -61,13 +61,14 @@ namespace PokemonIVStats
             var statsCalculated = Calculation.CalculatePerfection(Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
                 Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text), Convert.ToInt32(txtSpeed.Text), this);
 
+            // will edit this so not an ugly messagebox is shown
             if (statsCalculated == -1)
             {
                 MessageBox.Show("Pokemon Stats not found!");
             }
             else
             {
-                MessageBox.Show(statsCalculated.ToString() + "%");
+                MessageBox.Show(statsCalculated.ToString() + "% Perfect IV stats.");
             }
         }
     }
