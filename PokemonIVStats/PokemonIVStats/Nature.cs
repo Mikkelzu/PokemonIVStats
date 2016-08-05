@@ -61,6 +61,16 @@ namespace PokemonIVStats
             get { return name_; }
         }
 
+        public string StatIncrName
+        {
+            get { return increasedStat; }
+        }
+
+        public string StatDecrName
+        {
+            get { return decreasedStat; }
+        }
+
         public float Increased
         {
             get { return 10; }

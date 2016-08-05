@@ -26,8 +26,6 @@ namespace PokemonIVStats
                 _main.lblOutput.Content = "No sprite found.";
                 return null;
             }
-
-            
         }
 
         public static BitmapImage getShinySprite(object currentPokemonIndex, MainWindow _main)
