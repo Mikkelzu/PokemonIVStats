@@ -10,18 +10,6 @@ namespace PokemonIVStats
 {
     public class Calculation
     {
-
-
-
-
-
-
-
-
-
-
-
-
         public static int percentagePerfectionIV = 0;
 
         public static int CalculatePerfection(int health, int atk, int def, int spatk, int spdef, int speed, int level, MainWindow _main)
@@ -136,26 +124,19 @@ namespace PokemonIVStats
             {
 
                 /*
-                 Formula for IV?
- HP = ((2*Base + IV + EV/4 + 100) * Level) / 100 + 10
-Stat = (((2*Base + IV + EV/4) * Level) / 100 + 5) * Nature
+                 Formula for IV/EV
 
+                float natATK = 1;
+                float natDEF = 1;
+                float natSPATK = 1;
+                float natSPDEF = 1;
+                float natSPD = 1;
 
-                ((HP - 10) * 100) / Level = 2*Base + IV + EV/4 + 100
-
-IV = ((HP - 10) * 100) / Level - 2*Base - EV/4 - 100
-EV = (((HP - 10) * 100) / Level - 2*Base - IV - 100) * 4
-
-
-
-((Stat/Nature - 5) * 100) / Level = 2*Base + IV + EV/4
-
-IV = ((Stat/Nature - 5) * 100) / Level - 2*Base - EV/4
-EV = (((Stat/Nature - 5) * 100) / Level - 2*Base - IV) * 4
-
-
-                CALCULATING IV = 
-                IV = (EV )
+                double ATKIVMax = ((Math.Ceiling(atk / natATK) - 5) * 100 / level) - 2 * baseStats[1] - Math.Floor(ATKEV / 4f);
+                double DEFIVMax = ((Math.Ceiling(def / natDEF) - 5) * 100 / level) - 2 * baseStats[2] - Math.Floor(DEFEV / 4f);
+                double SPATKIVMax = ((Math.Ceiling(spatk / natSPATK) - 5) * 100 / level) - 2 * baseStats[3] - Math.Floor(SPATKEV / 4f);
+                double SPDEFIVMax = ((Math.Ceiling(spdef / natSPDEF) - 5) * 100 / level) - 2 * baseStats[4] - Math.Floor(SPDEFEV / 4f);
+                double SPDIVMax = ((Math.Ceiling(speed / natSPD) - 5) * 100 / level) - 2 * baseStats[5] - Math.Floor(SPDEV / 4f);
 
 */
                 Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
@@ -176,6 +157,8 @@ EV = (((Stat/Nature - 5) * 100) / Level - 2*Base - IV) * 4
                 var EV = (((atk / 10) - 5 * 100 / level - 2) * maxAtk) - IV * 4;
 
                 var ev2 = EV / MaxTotal;
+
+           
 
                 //var newSpAtk = (spatk / 10) + spatk;
                 //var newAtk = atk - (atk / 10);
