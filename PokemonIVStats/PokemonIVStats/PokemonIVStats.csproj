@@ -72,8 +72,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Calculation.cs" />
+    <Compile Include="Nature.cs" />
     <Compile Include="Pokemon.cs" />
-    <Compile Include="PokemonStats\GetIV.cs" />
     <Compile Include="GetSprite.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -89,7 +89,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PokemonStats\PokemonMaxStats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

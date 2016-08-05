@@ -25,6 +25,7 @@
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="558">
             <Button Background="White" Content="Settings" Foreground="Black"/>
         </Menu>
+        <ComboBox TabIndex="0" Controls:TextBoxHelper.Watermark="List of Natures"  x:Name="cmbSelectNature" HorizontalAlignment="Left" Margin="29,94,0,0" VerticalAlignment="Top" Width="173" SelectionChanged="cmbSelectPoke_SelectionChanged"/>
 
 
     </Grid>

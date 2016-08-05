@@ -29,6 +29,7 @@ namespace PokemonIVStats
 
             //call to filling the list
             FillPokemonList();
+            Nature.InitNatures(this);
         }
 
         //fills the list in combobox for pokemonnames
@@ -72,6 +73,7 @@ namespace PokemonIVStats
                 }
                 else
                 {
+                    //something doesnt seem right... calculation is wrong or stats are wrong?
                     Pokemon poke = (Pokemon)cmbSelectPoke.SelectedItem;
                     lblOutput.Content = "Your " + poke.Name + " has " + statsCalculated + "% Perfect IV stats.";
                 }
