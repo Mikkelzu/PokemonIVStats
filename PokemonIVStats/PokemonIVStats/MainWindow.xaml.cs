@@ -27,19 +27,35 @@ namespace PokemonIVStats
         {
             InitializeComponent();
 
+            ListInit();
+
             //call to filling the list
             FillPokemonList();
+            FillNatureList();
+            
+        }
+
+        public void ListInit()
+        {
+            Pokemon.Init();
             Nature.Init();
+
         }
 
         //fills the list in combobox for pokemonnames
         public void FillPokemonList()
         {
-            Pokemon.Init();
-
             foreach (Pokemon pok in Pokemon.pokemonList)
             {
                 cmbSelectPoke.Items.Add(pok);
+            }
+        }
+
+        public void FillNatureList()
+        {
+            foreach (Nature nat in Nature.NatureList)
+            {
+                cmbSelectNature.Items.Add(nat);
             }
         }
 
