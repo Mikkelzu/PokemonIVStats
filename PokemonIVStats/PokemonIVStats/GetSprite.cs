@@ -10,6 +10,7 @@ namespace PokemonIVStats
 {
     public class GetSprite
     {
+
         public static BitmapImage getNormalSprite(object currentPokemonIndex, MainWindow _main)
         {
             //needs fixing on the URI
@@ -24,6 +25,10 @@ namespace PokemonIVStats
             catch
             {
                 _main.lblOutput.Content = "No sprite found.";
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(@"C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\bin\Debug\Sprites\0.png");
+                bitmap.EndInit();
                 return null;
             }
         }
@@ -41,6 +46,10 @@ namespace PokemonIVStats
             catch
             {
                 _main.lblOutput.Content = "No sprite found.";
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(@"C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\bin\Debug\Sprites Shiny\0.png");
+                bitmap.EndInit();
                 return null;
             }
         }

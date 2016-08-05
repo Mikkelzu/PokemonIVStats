@@ -60,7 +60,11 @@ namespace PokemonIVStats
         }
         private void cmbSelectPoke_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            lblOutput.Content = "";
+
             var currentPokemonIndex = cmbSelectPoke.SelectedValue;
+
 
             // missing the sprites for mega evolutions. coming soon
             //show normal sprite
@@ -68,6 +72,7 @@ namespace PokemonIVStats
 
             // show shiny sprite
             pokemonShinySpriteImageBox.Source = GetSprite.getShinySprite(currentPokemonIndex, this);
+
         }
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
