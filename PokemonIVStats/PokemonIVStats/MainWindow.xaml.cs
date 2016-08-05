@@ -29,9 +29,6 @@ namespace PokemonIVStats
 
             //call to filling the list
             FillPokemonList();
-
-            //call to filling natures
-            FillNatureList();
         }
 
         //fills the list in combobox for pokemonnames
@@ -48,20 +45,6 @@ namespace PokemonIVStats
             }
         }
 
-        //fills the list in combobox for natures
-        public void FillNatureList()
-        {
-            string PathToNatures = @"Pokemon\list_Natures.txt";
-
-            string[] NatureFileList = File.ReadAllLines(PathToNatures);
-
-            foreach (var line in NatureFileList)
-            {
-                string[] NatureName = line.Split();
-                cmbSelectNature.Items.Add(NatureName?[0]);
-            }
-        }
-
         private void cmbSelectPoke_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var currentPokemonIndex = cmbSelectPoke.SelectedValue;
@@ -71,6 +54,21 @@ namespace PokemonIVStats
 
             // show shiny sprite
             pokemonShinySpriteImageBox.Source = GetSprite.getShinySprite(currentPokemonIndex);
+        }
+
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            var statsCalculated = Calculation.CalculatePerfection(Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
+                Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text), Convert.ToInt32(txtSpeed.Text), this);
+
+            if (statsCalculated == -1)
+            {
+                MessageBox.Show("Pokemon Stats not found!");
+            }
+            else
+            {
+                MessageBox.Show(statsCalculated.ToString() + "%");
+            }
         }
     }
 }

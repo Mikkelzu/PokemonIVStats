@@ -3,21 +3,24 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       Title="IV Calculator!"
-                      Height="600"
-                      Width="800"
+                      Height="511.748"
+                      Width="564.327"
                       ShowIconOnTitleBar="True"
                       ShowMaxRestoreButton="False"
                       ResizeMode="NoResize">
 
     <!-- your content -->
     <Grid>
-        <TextBox  Controls:TextBoxHelper.Watermark="Starting Level" x:Name="txtStartingLevel" HorizontalAlignment="Left" Height="23" Margin="29,118,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="173"/>
-        <TextBox  Controls:TextBoxHelper.Watermark="This is a textbox"  x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="29,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox  Controls:TextBoxHelper.Watermark="HP"  x:Name="txtHP" HorizontalAlignment="Left" Height="23" Margin="29,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
         <ComboBox  Controls:TextBoxHelper.Watermark="List of Pokemon"  x:Name="cmbSelectPoke" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top" Width="173" SelectionChanged="cmbSelectPoke_SelectionChanged"/>
-        <ComboBox  Controls:TextBoxHelper.Watermark="Nature"  x:Name="cmbSelectNature" HorizontalAlignment="Left" Margin="29,186,0,0" VerticalAlignment="Top" Width="173"/>
-        <Button x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="629,449,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="127,419,0,0" VerticalAlignment="Top" Width="75" Click="btnCalculate_Click"/>
         <Image x:Name="pokemonSpriteImageBox" HorizontalAlignment="Left" Height="100" Margin="264,33,0,0" VerticalAlignment="Top" Width="100"/>
         <Image x:Name="pokemonShinySpriteImageBox" HorizontalAlignment="Left" Height="100" Margin="424,33,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox  Controls:TextBoxHelper.Watermark="Attack"  x:Name="txtAttack" HorizontalAlignment="Left" Height="23" Margin="29,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox  Controls:TextBoxHelper.Watermark="Defense"  x:Name="txtDefense" HorizontalAlignment="Left" Height="23" Margin="29,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox  Controls:TextBoxHelper.Watermark="Sp. Atk"  x:Name="txtSpAtk" HorizontalAlignment="Left" Height="23" Margin="29,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox  Controls:TextBoxHelper.Watermark="Sp. Def"  x:Name="txtSpDef" HorizontalAlignment="Left" Height="23" Margin="29,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <TextBox  Controls:TextBoxHelper.Watermark="Speed"  x:Name="txtSpeed" HorizontalAlignment="Left" Height="23" Margin="29,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
 
 
     </Grid>

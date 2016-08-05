@@ -11,6 +11,7 @@ namespace PokemonIVStats
     {
         public static BitmapImage getNormalSprite(object currentPokemonIndex)
         {
+            //needs fixing on the URI
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(@"C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\bin\Debug\Sprites\" + currentPokemonIndex + ".png");
@@ -21,6 +22,7 @@ namespace PokemonIVStats
 
         public static BitmapImage getShinySprite(object currentPokemonIndex)
         {
+            //needs fixing on the URI
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(@"C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\bin\Debug\Sprites Shiny\" + currentPokemonIndex + ".png");
