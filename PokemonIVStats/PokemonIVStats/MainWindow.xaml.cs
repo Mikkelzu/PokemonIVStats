@@ -29,7 +29,7 @@ namespace PokemonIVStats
 
             //call to filling the list
             FillPokemonList();
-            Nature.InitNatures(this);
+            Nature.Init();
         }
 
         //fills the list in combobox for pokemonnames

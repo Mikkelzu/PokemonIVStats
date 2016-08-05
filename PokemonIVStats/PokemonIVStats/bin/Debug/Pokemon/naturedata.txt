@@ -1,0 +1,25 @@
+Bashful	N/A	N/A
+Docile	N/A	N/A
+Hardy	N/A	N/A
+Quirky	N/A	N/A
+Serious	N/A	N/A
+Adaman;Attack;Special Attack
+Brave;Attack;Speed
+Lonely;Attack;Defense
+Naughty;Attack;Special Defense
+Bold;Defense;Attack
+Impish;Defense;Special Attack
+Lax;Defense;Special Defense
+Relaxed;Defense;Speed
+Modest;Special Attack;Attack
+Mild;Special Attack;Defense
+Quiet;Special Attack;Speed
+Rash;Special Attack;Special Defense
+Calm;Special Defense;Attack
+Careful;Special Defense;Special Attack
+Gentle;Special Defense;Defense
+Sassy;Special Defense;Speed
+Hasty;Speed;Defense
+Jolly;Speed;Special Attack
+Naive;Speed;Special Defense
+Timid;Speed;Attack
