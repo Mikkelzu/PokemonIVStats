@@ -153,7 +153,7 @@ EV = (((Stat/Nature - 5) * 100) / Level - 2*Base - IV) * 4
 
                 var MaxTotal = selectedPok.Total;
 
-                var EV = ((atk - 5) * 100 / level - 2*maxAtk - atk); 
+                var EV = ((atk - 5) * 100 / level - 2*maxAtk - atk) * 4; 
 
 
                 //var newSpAtk = (spatk / 10) + spatk;
