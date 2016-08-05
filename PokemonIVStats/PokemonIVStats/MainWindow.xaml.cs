@@ -34,14 +34,11 @@ namespace PokemonIVStats
         //fills the list in combobox for pokemonnames
         public void FillPokemonList()
         {
-            string PathToPokes = @"Pokemon\list_Pokes.txt";
+            Pokemon.Init();
 
-            string[] PokemonFileList = File.ReadAllLines(PathToPokes);
-
-            foreach (var line in PokemonFileList)
+            foreach (Pokemon pok in Pokemon.pokemonList)
             {
-                string[] PokemonName = line.Split();
-                cmbSelectPoke.Items.Add(PokemonName?[0]);
+                cmbSelectPoke.Items.Add(pok);
             }
         }
 
@@ -49,11 +46,12 @@ namespace PokemonIVStats
         {
             var currentPokemonIndex = cmbSelectPoke.SelectedValue;
 
+            // missing the sprites for mega evolutions. coming soon
             //show normal sprite
-            pokemonSpriteImageBox.Source = GetSprite.getNormalSprite(currentPokemonIndex);
+            pokemonSpriteImageBox.Source = GetSprite.getNormalSprite(currentPokemonIndex, this);
 
             // show shiny sprite
-            pokemonShinySpriteImageBox.Source = GetSprite.getShinySprite(currentPokemonIndex);
+            pokemonShinySpriteImageBox.Source = GetSprite.getShinySprite(currentPokemonIndex, this);
         }
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
@@ -74,7 +72,8 @@ namespace PokemonIVStats
                 }
                 else
                 {
-                    lblOutput.Content = statsCalculated +  "% Perfect IV stats.";
+                    Pokemon poke = (Pokemon)cmbSelectPoke.SelectedItem;
+                    lblOutput.Content = "Your " + poke.Name + " has " + statsCalculated + "% Perfect IV stats.";
                 }
             }
         }

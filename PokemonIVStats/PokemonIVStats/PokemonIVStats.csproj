@@ -72,6 +72,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Calculation.cs" />
+    <Compile Include="Pokemon.cs" />
     <Compile Include="PokemonStats\GetIV.cs" />
     <Compile Include="GetSprite.cs" />
     <Compile Include="MainWindow.xaml.cs">
