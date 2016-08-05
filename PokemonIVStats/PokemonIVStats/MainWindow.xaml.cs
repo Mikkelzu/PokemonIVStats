@@ -61,5 +61,16 @@ namespace PokemonIVStats
                 cmbSelectNature.Items.Add(NatureName?[0]);
             }
         }
+
+        private void cmbSelectPoke_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var currentPokemonIndex = cmbSelectPoke.SelectedValue;
+
+            //show normal sprite
+            pokemonSpriteImageBox.Source = GetSprite.getNormalSprite(currentPokemonIndex);
+
+            // show shiny sprite
+            pokemonShinySpriteImageBox.Source = GetSprite.getShinySprite(currentPokemonIndex);
+        }
     }
 }

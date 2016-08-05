@@ -13,8 +13,12 @@
     <Grid>
         <TextBox  Controls:TextBoxHelper.Watermark="Starting Level" x:Name="txtStartingLevel" HorizontalAlignment="Left" Height="23" Margin="29,118,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="173"/>
         <TextBox  Controls:TextBoxHelper.Watermark="This is a textbox"  x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="29,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
-        <ComboBox  Controls:TextBoxHelper.Watermark="List of Pokemon"  x:Name="cmbSelectPoke" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top" Width="173"/>
+        <ComboBox  Controls:TextBoxHelper.Watermark="List of Pokemon"  x:Name="cmbSelectPoke" HorizontalAlignment="Left" Margin="29,55,0,0" VerticalAlignment="Top" Width="173" SelectionChanged="cmbSelectPoke_SelectionChanged"/>
         <ComboBox  Controls:TextBoxHelper.Watermark="Nature"  x:Name="cmbSelectNature" HorizontalAlignment="Left" Margin="29,186,0,0" VerticalAlignment="Top" Width="173"/>
+        <Button x:Name="btnCalculate" Content="Calculate" HorizontalAlignment="Left" Margin="629,449,0,0" VerticalAlignment="Top" Width="75"/>
+        <Image x:Name="pokemonSpriteImageBox" HorizontalAlignment="Left" Height="100" Margin="264,33,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="pokemonShinySpriteImageBox" HorizontalAlignment="Left" Height="100" Margin="424,33,0,0" VerticalAlignment="Top" Width="100"/>
+
 
     </Grid>
 
