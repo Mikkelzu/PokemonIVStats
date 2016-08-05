@@ -21,6 +21,7 @@
         <TextBox  Controls:TextBoxHelper.Watermark="Sp. Atk"  x:Name="txtSpAtk" HorizontalAlignment="Left" Height="23" Margin="29,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
         <TextBox  Controls:TextBoxHelper.Watermark="Sp. Def"  x:Name="txtSpDef" HorizontalAlignment="Left" Height="23" Margin="29,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
         <TextBox  Controls:TextBoxHelper.Watermark="Speed"  x:Name="txtSpeed" HorizontalAlignment="Left" Height="23" Margin="29,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+        <Label x:Name="lblOutput" Content="" HorizontalAlignment="Left" Margin="222,229,0,0" VerticalAlignment="Top" Height="70" Width="278" FontSize="16"/>
 
 
     </Grid>

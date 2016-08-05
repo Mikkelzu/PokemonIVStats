@@ -58,17 +58,24 @@ namespace PokemonIVStats
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
-            var statsCalculated = Calculation.CalculatePerfection(Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
-                Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text), Convert.ToInt32(txtSpeed.Text), this);
-
-            // will edit this so not an ugly messagebox is shown
-            if (statsCalculated == -1)
+            if (txtHP.Text == "" || txtAttack.Text == "" || txtDefense.Text == "" || txtSpAtk.Text == "" || txtSpDef.Text == "" || txtSpeed.Text == "")
             {
-                MessageBox.Show("Pokemon Stats not found!");
+                lblOutput.Content = "One or more values not filled in.\nPlease fill these in.";
             }
             else
             {
-                MessageBox.Show(statsCalculated.ToString() + "% Perfect IV stats.");
+                var statsCalculated = Calculation.CalculatePerfection(Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
+               Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text), Convert.ToInt32(txtSpeed.Text), this);
+
+                // -1 is default case of saying that the pokemon doesnt exist (if theres a new one not implemented yet)
+                if (statsCalculated == -1)
+                {
+                    lblOutput.Content = "No Pokemon data found.";
+                }
+                else
+                {
+                    lblOutput.Content = statsCalculated +  "% Perfect IV stats.";
+                }
             }
         }
     }
