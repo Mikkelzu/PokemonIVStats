@@ -57,9 +57,7 @@ namespace PokemonIVStats
                attackIVMax > 31 || defenseIVMax > 31 || spAtkIVMax > 31 || spDefIVMax > 31 || speedIVMax > 31)
             {
                 string x = "Error: IV's are incorrect. Don't ask me why.\nMake sure the EV Yield is between 0 and 3.";
-                // _main.lblOutput.Content = x;
-                double totalIV = (attackIVMax + defenseIVMax + spAtkIVMax + spDefIVMax + speedIVMax);
-                double y = (155 - totalIV) * 100;
+                 _main.lblOutput.Content = x;
             }
             else
             {
