@@ -31,8 +31,14 @@ namespace PokemonIVStats
 
             perfectionIvPercent = Math.Round(perfectionIvPercent);
 
-            _main.lblOutput.Content = $"Your {pokemon.Name}\nhas {perfectionIvPercent}% perfect IV's.";
-
+            if (perfectionIvPercent > 100)
+            {
+                _main.lblOutput.Content = $"Wow your {pokemon.Name} has exceeded the maximum stats!\nThat can't be right.\nAt {perfectionIvPercent}%... are you sure?";
+            }
+            else
+            {
+                _main.lblOutput.Content = $"Your {pokemon.Name}\nhas {perfectionIvPercent}% perfect IV's.";
+            }
         }
     }
 }

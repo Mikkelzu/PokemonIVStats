@@ -12,7 +12,6 @@ namespace PokemonIVStats
 
         private int id_ = 0;
         private string name_ = "";
-        private int total_ = 0;
         private int hp_ = 0;
         private int attack_ = 0;
         private int defense_ = 0;
@@ -100,11 +99,6 @@ namespace PokemonIVStats
         public int Speed
         {
             get { return speed_; }
-        }
-
-        public int Total
-        {
-            get { return total_; }
         }
 
         public override string ToString()

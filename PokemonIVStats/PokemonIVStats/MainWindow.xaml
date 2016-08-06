@@ -3,7 +3,7 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       Title="IV Perfection Calculator"
-                      Height="653.748"
+                      Height="570.748"
                       Width="670.327"
                       ShowIconOnTitleBar="True"
                       ShowMaxRestoreButton="False"
@@ -21,7 +21,7 @@
         <TextBox  Controls:TextBoxHelper.Watermark="Sp. Atk"  x:Name="txtSpAtk" HorizontalAlignment="Left" Height="23" Margin="10,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
         <TextBox  Controls:TextBoxHelper.Watermark="Sp. Def"  x:Name="txtSpDef" HorizontalAlignment="Left" Height="23" Margin="10,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
         <TextBox  Controls:TextBoxHelper.Watermark="Speed"  x:Name="txtSpeed" HorizontalAlignment="Left" Height="23" Margin="10,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
-        <Label x:Name="lblOutput" Content="" HorizontalAlignment="Left" Margin="195,391,0,0" VerticalAlignment="Top" Height="155" Width="376" FontSize="18"/>
+        <Label x:Name="lblOutput" Content="" HorizontalAlignment="Left" Margin="187,349,0,0" VerticalAlignment="Top" Height="98" Width="456" FontSize="18"/>
 
     </Grid>
 
