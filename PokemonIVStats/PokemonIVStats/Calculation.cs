@@ -10,308 +10,73 @@ namespace PokemonIVStats
 {
     public class Calculation
     {
-        public static int percentagePerfectionIV = 0;
-
-        public static int CalculatePerfection(int health, int atk, int def, int spatk, int spdef, int speed, int level, MainWindow _main)
+        public static void CalcIVs(MainWindow _main, int hpev, int hp, int atkev, int atk, int defev, int def, int spatkev, int spatk, int spdefev, int spdef, int speedev, int speed, int level)
         {
-            Nature selectedNat = (Nature)_main.cmbSelectNature.SelectedItem;
+            Pokemon pokemon = (Pokemon)_main.cmbSelectPoke.SelectedItem;
 
-            var nameNature = selectedNat.Name;
+            float baseAttack = pokemon.Attack;
+            float baseDefense = pokemon.Defense;
+            float baseSpAtk = pokemon.SpecialAttack;
+            float baseSpDef = pokemon.SpecialDefense;
+            float baseSpeed = pokemon.Speed;
 
-            var decreasedStat = selectedNat.StatDecrName;
 
-            var increasedStat = selectedNat.StatIncrName;
-           
-            if (nameNature == "Adamant")
+            float natureAttack = 0;
+            float natureDefense = 0;
+            float natureSpAtk = 0;
+            float natureSpDef = 0;
+            float natureSpeed = 0;
+
+            string nature = _main.cmbSelectNature.SelectedItem.ToString();
+
+            if (nature == "Lonely" || nature == "Brave" || nature == "Adamant" || nature == "Naughty") { natureAttack = 1f; }
+            if (nature == "Bold" || nature == "Relaxed" || nature == "Impish" || nature == "Lax") { natureDefense = 1f; }
+            if (nature == "Timid" || nature == "Hasty" || nature == "Jolly" || nature == "Naive") { natureSpeed = 1f; }
+            if (nature == "Modest" || nature == "Mild" || nature == "Quiet" || nature == "Rash") { natureSpAtk = 1f; }
+            if (nature == "Calm" || nature == "Gentle" || nature == "Sassy" || nature == "Careful") { natureSpDef = 1f; }
+
+            if (nature == "Bold" || nature == "Timid" || nature == "Modest" || nature == "Calm") { natureAttack = 0.9f; }
+            if (nature == "Lonely" || nature == "Hasty" || nature == "Mild" || nature == "Gentle") { natureDefense = 0.9f; }
+            if (nature == "Brave" || nature == "Relaxed" || nature == "Quiet" || nature == "Sassy") { natureSpeed = 0.9f; }
+            if (nature == "Adamant" || nature == "Impish" || nature == "Jolly" || nature == "Careful") { natureSpAtk = 0.9f; }
+            if (nature == "Naughty" || nature == "Lax" || nature == "Naive" || nature == "Rash") { natureSpDef = 0.9f; }
+
+            double attackIVMax = (((atk / natureAttack) - 5) * 100 / level) - 2 * baseAttack - (atkev / 4);
+            double defenseIVMax = (((def / natureDefense) - 5) * 100 / level) - 2 * baseDefense - (defev / 4);
+            double spAtkIVMax = (((spatk / natureSpAtk) - 5) * 100 / level) - 2 * baseSpAtk - (spatkev / 4);
+            double spDefIVMax = (((spdef / natureSpDef) - 5) * 100 / level) - 2 * baseSpDef - (spdefev / 4);
+            double speedIVMax = (((speed / natureSpeed) - 5) * 100 / level) - 2 * baseSpeed - (speedev / 4);
+
+            RoundUpDown(attackIVMax);
+            RoundUpDown(defenseIVMax);
+            RoundUpDown(spAtkIVMax);
+            RoundUpDown(spDefIVMax);
+            RoundUpDown(speedIVMax);
+
+            if (attackIVMax < 0 || defenseIVMax < 0 || spAtkIVMax < 0 || spDefIVMax < 0 || speedIVMax < 0 ||
+               attackIVMax > 31 || defenseIVMax > 31 || spAtkIVMax > 31 || spDefIVMax > 31 || speedIVMax > 31)
             {
-                var newAtk = (atk / 10) + atk;
-                var newSpAtk = spatk - (spatk / 10);
-                var NewCalc = health + newAtk + def + newSpAtk + spdef + speed;
-
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-                
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * NewCalc) / MaxTotal);
-                
-            }
-            else if (nameNature == "Brave")
-            {
-                var newAtk = (atk / 10) + atk;
-                var newSpeed = speed - (speed / 10);
-                var newCalc = health + newAtk + def + spatk + spdef + newSpeed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Lonely")
-            {
-                var newAtk = (atk / 10) + atk;
-                var newDef = def - (def / 10);
-                var newCalc = health + newAtk + newDef + spatk + spdef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Naughty")
-            {
-                var newAtk = (atk / 10) + atk;
-                var newSpDef = def - (def / 10);
-                var newCalc = health + newAtk + def + spatk + newSpDef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Bold")
-            {
-                var newDef = (def / 10) + def;
-                var newAtk = atk - (atk / 10);
-                var newCalc = health + newAtk + newDef + spatk + spdef + speed;
-
-                 Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Impish")
-            {
-                var newDef = (def / 10) + def;
-                var newSpAtk = spatk - (spatk / 10);
-                var newCalc = health + atk + newDef + newSpAtk + spdef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Lax")
-            {
-                var newDef = (def / 10) + def;
-                var newSpDef = spdef - (spdef / 10);
-                var newCalc = health + atk + newDef + spatk + newSpDef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Relaxed")
-            {
-                var newDef = (def / 10) + def;
-                var newSpeed = speed - (speed / 10);
-                var newCalc = health + atk + newDef + spatk + spdef + newSpeed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Modest")
-            {
-
-                /*
-                 Formula for IV/EV
-
-                float natATK = 1;
-                float natDEF = 1;
-                float natSPATK = 1;
-                float natSPDEF = 1;
-                float natSPD = 1;
-
-                double ATKIVMax = ((Math.Ceiling(atk / natATK) - 5) * 100 / level) - 2 * baseStats[1] - Math.Floor(ATKEV / 4f);
-                double DEFIVMax = ((Math.Ceiling(def / natDEF) - 5) * 100 / level) - 2 * baseStats[2] - Math.Floor(DEFEV / 4f);
-                double SPATKIVMax = ((Math.Ceiling(spatk / natSPATK) - 5) * 100 / level) - 2 * baseStats[3] - Math.Floor(SPATKEV / 4f);
-                double SPDEFIVMax = ((Math.Ceiling(spdef / natSPDEF) - 5) * 100 / level) - 2 * baseStats[4] - Math.Floor(SPDEFEV / 4f);
-                double SPDIVMax = ((Math.Ceiling(speed / natSPD) - 5) * 100 / level) - 2 * baseStats[5] - Math.Floor(SPDEV / 4f);
-
-*/
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var maxHP =selectedPok.Hp;
-                var maxAtk = selectedPok.Attack;
-                var maxDef = selectedPok.Defense;
-                var maxSpAtk = selectedPok.SpecialAttack;
-                var maxSpDef = selectedPok.SpecialDefense;
-                var maxSpeed = selectedPok.Speed;
-
-                var MaxTotal = selectedPok.Total;
-
-                
-
-                var IV = (((atk / 10) - 5 * 100) / level - 2) * maxAtk - atk / 4;
-
-                var EV = (((atk / 10) - 5 * 100 / level - 2) * maxAtk) - IV * 4;
-
-                var ev2 = EV / MaxTotal;
-
-           
-
-                //var newSpAtk = (spatk / 10) + spatk;
-                //var newAtk = atk - (atk / 10);
-                //var newCalc = health + newAtk + def + newSpAtk + spdef + speed;
-
-                //percentagePerfectionIV = (int)Math.Round((double)(100 * EV) / MaxTotal);
-                return ev2;
-            }
-            else if (nameNature == "Mild")
-            {
-                var newSpAtk = (spatk / 10) + spatk;
-                var newDef = def - (def / 10);
-                var newCalc = health + atk + newDef + newSpAtk + spdef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Quiet")
-            {
-                var newSpAtk = (spatk / 10) + spatk;
-                var newSpeed = speed - (speed / 10);
-                var newCalc = health + atk + def + newSpAtk + spdef + newSpeed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Rash")
-            {
-                var newSpAtk = (spatk / 10) + spatk;
-                var newSpDef = spdef - (spdef / 10);
-                var newCalc = health + atk + def + newSpAtk + newSpDef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Calm")
-            {
-                var newSpDef = (spdef / 10) + spdef;
-                var newAtk = atk - (atk / 10);
-                var newCalc = health + newAtk + def + spatk + newSpDef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Careful")
-            {
-                var newSpDef = (spdef / 10) + spdef;
-                var newSpAtk = spatk - (spatk / 10);
-                var newCalc = health + atk + def + newSpAtk + newSpDef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Gentle")
-            {
-                var newSpDef = (spdef / 10) + spdef;
-                var newDef = def - (def / 10);
-                var newCalc = health + atk + newDef + spatk + newSpDef + speed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Sassy")
-            {
-                var newSpDef = (spdef / 10) + spdef;
-                var newSpeed = speed - (speed / 10);
-                var newCalc = health + atk + def + spatk + newSpDef + newSpeed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Hasty")
-            {
-                var newSpeed = (speed / 10) + speed;
-                var newDef = def - (def / 10);
-                var newCalc = health + atk + newDef + spatk + spdef + newSpeed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Jolly")
-            {
-                var newSpeed = (speed / 10) + speed;
-                var newSpAtk = spatk - (spatk / 10);
-                var newCalc = health + atk + def + newSpAtk + spdef + newSpeed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Naive")
-            {
-                var newSpeed = (speed / 10) + speed;
-                var newSpDef = spdef - (spdef / 10);
-                var newCalc = health + atk + def + spatk + newSpDef + newSpeed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
-            }
-            else if (nameNature == "Timid")
-            {
-                var newSpeed = (speed / 10) + speed;
-                var newAtk = atk - (atk / 10);
-                var newCalc = health + newAtk + def + spatk + spdef + newSpeed;
-
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
-
-                var MaxTotal = selectedPok.Total;
-
-                percentagePerfectionIV = (int)Math.Round((double)(100 * newCalc) / MaxTotal);
+                string x = "Error: IV's are incorrect. Don't ask me why.\nMake sure the EV Yield is between 0 and 3.";
+                _main.lblOutput.Content = x;
             }
             else
             {
-                var NatureNoEffect = health + atk + def + spatk + spdef + speed;
 
-                Pokemon selectedPok = (Pokemon)_main.cmbSelectPoke.SelectedItem;
+                double totalIV = (attackIVMax + defenseIVMax + spAtkIVMax + spDefIVMax + speedIVMax) / 5;
 
-                var MaxTotal = selectedPok.Total;
+                //155
+                double perfectionIvPercent = totalIV / 155 * 100;
 
-                percentagePerfectionIV = (int)Math.Round((double)(100 * NatureNoEffect) / MaxTotal);
+                _main.lblOutput.Content = $"Your {pokemon.Name} has {perfectionIvPercent}% perfect IV's.";
             }
 
+        }
 
-            return percentagePerfectionIV;
+        public static int RoundUpDown(double input)
+        {
+            input = Math.Round(input);
+
+            return (int)input;
         }
     }
 }

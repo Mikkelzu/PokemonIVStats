@@ -1,9 +1,4 @@
-﻿//////////////////////
-//TODO
-//FINISH DOCUMENT
-/////////////////////
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -13,8 +8,6 @@ namespace PokemonIVStats
     {
         public static List<Nature> NatureList = new List<Nature>();
         private string name_ = "";
-        private string increasedStat = "";
-        private string decreasedStat = "";
 
         public static void Init()
         {
@@ -26,11 +19,11 @@ namespace PokemonIVStats
                     while ((line = sr.ReadLine()) != null)
                     {
                         string[] spl = line.Split(';');
-                        if (spl.Length == 3)
+                        if (spl.Length == 1)
                         {
                             try
                             {
-                                new Nature(spl[0], spl[1], spl[2]);
+                                new Nature(spl[0]);
                             }
                             catch (Exception ex)
                             {
@@ -47,11 +40,9 @@ namespace PokemonIVStats
             }
         }
 
-        public Nature(string naturename, string increased, string decreased)
+        public Nature(string naturename)
         {
             name_ = naturename;
-            increased = increasedStat;
-            decreased = decreasedStat;
 
             NatureList.Add(this);
         }
@@ -61,26 +52,7 @@ namespace PokemonIVStats
             get { return name_; }
         }
 
-        public string StatIncrName
-        {
-            get { return increasedStat; }
-        }
-
-        public string StatDecrName
-        {
-            get { return decreasedStat; }
-        }
-
-        public float Increased
-        {
-            get { return 10; }
-        }
-
-        public float Decreased
-        {
-            get { return 10; }
-        }
-
+        
         public override string ToString()
         {
             return name_;

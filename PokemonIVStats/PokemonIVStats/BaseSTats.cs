@@ -1,4 +1,6 @@
-﻿using System;
+﻿//not in use, probably useful sometime
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,7 +21,7 @@ namespace PokemonIVStats
 
             for (int i = 0; i < 6; i++)
             {
-                stats_str[i] = System.IO.File.ReadLines(path + "/data/PokemonBaseStats.txt").Skip(line_num).Take(1).First();
+                stats_str[i] = File.ReadLines(path + "/data/PokemonBaseStats.txt").Skip(line_num).Take(1).First();
                 line_num++;
             }
 
