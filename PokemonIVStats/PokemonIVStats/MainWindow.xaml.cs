@@ -41,25 +41,21 @@ namespace PokemonIVStats
         //fills the list in combobox for pokemonnames
         public void FillPokemonList()
         {
-            foreach (Pokemon pok in Pokemon.pokemonList)
+            foreach (var pok in Pokemon.pokemonList)
             {
                 cmbSelectPoke.Items.Add(pok);
             }
         }
-
        
         private void cmbSelectPoke_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             lblOutput.Content = "";
             var currentPokemonIndex = cmbSelectPoke.SelectedValue;
 
-
-            // missing the sprites for mega evolutions. coming soon
             //show normal sprite
-            pokemonSpriteImageBox.Source = GetSprite.getNormalSprite(currentPokemonIndex, this);
-
+            pokemonSpriteImageBox.Source = GetSprite.GetNormalSprite(currentPokemonIndex, this);
             // show shiny sprite
-            pokemonShinySpriteImageBox.Source = GetSprite.getShinySprite(currentPokemonIndex, this);
+            pokemonShinySpriteImageBox.Source = GetSprite.GetShinySprite(currentPokemonIndex, this);
 
             if (pokemonSpriteImageBox.Source == null)
             {
@@ -84,7 +80,7 @@ namespace PokemonIVStats
 
                 Calculation.CalcIVs(this, Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
                     Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text),
-                 Convert.ToInt32(txtSpeed.Text));
+                    Convert.ToInt32(txtSpeed.Text));
             }
         }
     }

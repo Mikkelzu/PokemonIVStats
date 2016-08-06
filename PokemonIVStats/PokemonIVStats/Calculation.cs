@@ -10,9 +10,9 @@ namespace PokemonIVStats
 {
     public class Calculation
     {
-        public static void CalcIVs(MainWindow _main, int hp, int atk, int def, int spatk, int spdef, int speed)
+        public static void CalcIVs(MainWindow main, int hp, int atk, int def, int spatk, int spdef, int speed)
         {
-            Pokemon pokemon = (Pokemon)_main.cmbSelectPoke.SelectedItem;
+            var pokemon = (Pokemon)main.cmbSelectPoke.SelectedItem;
 
             float maxHealth = pokemon.Hp;
             float maxAttack = pokemon.Attack;
@@ -21,24 +21,18 @@ namespace PokemonIVStats
             float maxSpDef = pokemon.SpecialDefense;
             float maxSpeed = pokemon.Speed;
 
-            var TotalMax = maxHealth + maxAttack + maxDefense + maxSpAtk + maxSpDef + maxSpeed;
+            var totalMax = maxHealth + maxAttack + maxDefense + maxSpAtk + maxSpDef + maxSpeed;
 
 
-            double totalIV = (hp + atk + def + spatk + spdef + speed);
+            double totalIv = (hp + atk + def + spatk + spdef + speed);
 
             //155
-            double perfectionIvPercent = (totalIV / TotalMax) * 100;
+            var perfectionIvPercent = (totalIv / totalMax) * 100;
 
             perfectionIvPercent = Math.Round(perfectionIvPercent);
 
-            if (perfectionIvPercent > 100)
-            {
-                _main.lblOutput.Content = $"Wow your {pokemon.Name} has exceeded the maximum stats!\nThat can't be right.\nAt {perfectionIvPercent}%... are you sure?";
-            }
-            else
-            {
-                _main.lblOutput.Content = $"Your {pokemon.Name}\nhas {perfectionIvPercent}% perfect IV's.";
-            }
+            main.lblOutput.Content = perfectionIvPercent > 100 ? $"Wow your {pokemon.Name} has exceeded the maximum stats!\nThat can't be right.\nAt {perfectionIvPercent}%... are you sure?"
+                : $"Your {pokemon.Name}\nhas {perfectionIvPercent}% perfect IV's.";
         }
     }
 }

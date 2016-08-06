@@ -11,21 +11,14 @@ namespace PokemonIVStats
         public static List<Pokemon> pokemonList = new List<Pokemon>();
 
         private int id_ = 0;
-        private string name_ = "";
-        private int hp_ = 0;
-        private int attack_ = 0;
-        private int defense_ = 0;
-        private int specialAttack_ = 0;
-        private int specialDefense_ = 0;
-        private int speed_ = 0;
 
         public static void Init()
         {
             try
             {
-                using (StreamReader sr = new StreamReader("Pokemon/pokemondata.txt"))
+                using (var sr = new StreamReader("Pokemon/pokemondata.txt"))
                 {
-                    string line = "";
+                    var line = "";
                     while ((line = sr.ReadLine()) != null)
                     {
                         string[] spl = line.Split(';');
@@ -54,56 +47,35 @@ namespace PokemonIVStats
         {
 
             id_ = id;
-            name_ = name;
-            hp_ = hp;
-            attack_ = attack;
-            defense_ = defense;
-            specialAttack_ = specialAttack;
-            specialDefense_ = specialDefense;
-            speed_ = speed;
+            Name = name;
+            Hp = hp;
+            Attack = attack;
+            Defense = defense;
+            SpecialAttack = specialAttack;
+            SpecialDefense = specialDefense;
+            Speed = speed;
 
             pokemonList.Add(this);
         }
 
 
-        public string Name
-        {
-            get { return name_; }
-        }
+        public string Name { get; } = "";
 
-        public int Hp
-        {
-            get { return hp_; }
-        }
+        public int Hp { get; } = 0;
 
-        public int Attack
-        {
-            get { return attack_; }
-        }
+        public int Attack { get; } = 0;
 
-        public int Defense
-        {
-            get { return defense_; }
-        }
+        public int Defense { get; } = 0;
 
-        public int SpecialAttack
-        {
-            get { return specialAttack_; }
-        }
+        public int SpecialAttack { get; } = 0;
 
-        public int SpecialDefense
-        {
-            get { return specialDefense_; }
-        }
+        public int SpecialDefense { get; } = 0;
 
-        public int Speed
-        {
-            get { return speed_; }
-        }
+        public int Speed { get; } = 0;
 
         public override string ToString()
         {
-            return name_;
+            return Name;
         }
     }
 }
