@@ -13,12 +13,12 @@ namespace PokemonIVStats
         {
             try
             {
-                using (StreamReader sr = new StreamReader("Pokemon/naturedata.txt"))
+                using (StreamReader sr = new StreamReader("Pokemon/list_Natures.txt"))
                 {
                     string line = "";
                     while ((line = sr.ReadLine()) != null)
                     {
-                        string[] spl = line.Split(';');
+                        string[] spl = line.Split();
                         if (spl.Length == 1)
                         {
                             try
