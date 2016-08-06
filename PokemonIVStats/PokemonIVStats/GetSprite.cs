@@ -53,5 +53,14 @@ namespace PokemonIVStats
                 return null;
             }
         }
+
+        public static BitmapImage NoImageFound()
+        {
+            var bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(Path + @"\Sprites\0.png");
+            bitmap.EndInit();
+            return bitmap;
+        }
     }
 }

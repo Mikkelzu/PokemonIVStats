@@ -60,10 +60,12 @@ namespace PokemonIVStats
             if (pokemonSpriteImageBox.Source == null)
             {
                 lblOutput.Content = "No Sprite not found.";
+                pokemonSpriteImageBox.Source = GetSprite.NoImageFound();
             }
             else if (pokemonShinySpriteImageBox.Source == null)
             {
                 lblOutput.Content = "Shiny Sprite not found.";
+                pokemonShinySpriteImageBox.Source = GetSprite.NoImageFound();
             }
         }
 
