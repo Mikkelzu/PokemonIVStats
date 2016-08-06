@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("htmlpage1.html")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("unusedcode-forlaterimplementation.txt")]
 
 

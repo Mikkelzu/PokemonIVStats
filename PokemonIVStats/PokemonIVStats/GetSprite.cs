@@ -5,20 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.Windows;
+using System.IO;
 
 namespace PokemonIVStats
 {
     public class GetSprite
     {
-
+        public static string path = Directory.GetCurrentDirectory();
         public static BitmapImage getNormalSprite(object currentPokemonIndex, MainWindow _main)
         {
-            //needs fixing on the URI
             try
             {
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(@"C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\bin\Debug\Sprites\" + currentPokemonIndex + ".png");
+                bitmap.UriSource = new Uri(path + @"\Sprites\" + currentPokemonIndex + ".png");
                 bitmap.EndInit();
                 return bitmap;
             }
@@ -27,7 +27,7 @@ namespace PokemonIVStats
                 _main.lblOutput.Content = "No sprite found.";
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(@"C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\bin\Debug\Sprites\0.png");
+                bitmap.UriSource = new Uri(path + @"\Sprites\0.png");
                 bitmap.EndInit();
                 return null;
             }
@@ -39,7 +39,7 @@ namespace PokemonIVStats
             {
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(@"C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\bin\Debug\Sprites Shiny\" + currentPokemonIndex + ".png");
+                bitmap.UriSource = new Uri(path + @"\Sprites Shiny\" + currentPokemonIndex + ".png");
                 bitmap.EndInit();
                 return bitmap;
             }
@@ -48,7 +48,7 @@ namespace PokemonIVStats
                 _main.lblOutput.Content = "No sprite found.";
                 BitmapImage bitmap = new BitmapImage();
                 bitmap.BeginInit();
-                bitmap.UriSource = new Uri(@"C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\bin\Debug\Sprites Shiny\0.png");
+                bitmap.UriSource = new Uri(path + @"\Sprites Shiny\0.png");
                 bitmap.EndInit();
                 return null;
             }

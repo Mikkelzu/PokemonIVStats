@@ -1,0 +1,10 @@
+﻿ public void FillNatureList()
+        {
+            foreach (Nature nat in Nature.NatureList)
+            {
+                cmbSelectNature.Items.Add(nat);
+            }
+        }
+
+------------------------------------------------------------
+

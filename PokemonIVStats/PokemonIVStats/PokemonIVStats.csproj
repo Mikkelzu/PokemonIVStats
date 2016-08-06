@@ -71,7 +71,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseStats.cs" />
     <Compile Include="Calculation.cs" />
     <Compile Include="Nature.cs" />
     <Compile Include="Pokemon.cs" />
@@ -124,7 +123,9 @@
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="UnusedCode-ForLaterImplementation.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Sprites\0.png" />
     <Resource Include="Resources\Sprites\abomasnow-f.png" />

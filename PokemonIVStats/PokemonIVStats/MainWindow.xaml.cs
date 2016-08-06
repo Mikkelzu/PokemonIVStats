@@ -30,34 +30,24 @@ namespace PokemonIVStats
 
             //call to filling the list
             FillPokemonList();
-            FillNatureList();
-
         }
 
         public void InitAll()
         {
             Pokemon.Init();
-            Nature.Init();
+            Nature.Init(); //does nothing yet
         }
 
         //fills the list in combobox for pokemonnames
         public void FillPokemonList()
         {
-            Pokemon.Init();
-
             foreach (Pokemon pok in Pokemon.pokemonList)
             {
                 cmbSelectPoke.Items.Add(pok);
             }
         }
 
-        public void FillNatureList()
-        {
-            foreach (Nature nat in Nature.NatureList)
-            {
-                cmbSelectNature.Items.Add(nat);
-            }
-        }
+       
         private void cmbSelectPoke_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             lblOutput.Content = "";
@@ -85,16 +75,16 @@ namespace PokemonIVStats
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {
 
-            if (txtHP.Text == "" || txtAttack.Text == "" || txtDefense.Text == "" || txtSpAtk.Text == "" || txtSpDef.Text == "" || txtSpeed.Text == "" || txtLevel.Text == "")
+            if (txtHP.Text == "" || txtAttack.Text == "" || txtDefense.Text == "" || txtSpAtk.Text == "" || txtSpDef.Text == "" || txtSpeed.Text == "")
             {
                 lblOutput.Content = "One or more values not filled in.\nPlease fill these in.";
             }
             else
             {
 
-                Calculation.CalcIVs(this, Convert.ToInt32(txtHPEV.Text), Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtATKEV.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDEFEV.Text),
-                Convert.ToInt32(txtDefense.Text), Convert.ToInt32(txtSPATKEV.Text), Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSPDEFEV.Text), Convert.ToInt32(txtSpDef.Text),
-                Convert.ToInt32(txtSPEEDEV.Text), Convert.ToInt32(txtSpeed.Text), Convert.ToInt32(txtLevel.Text));
+                Calculation.CalcIVs(this, Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
+                    Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text),
+                 Convert.ToInt32(txtSpeed.Text));
             }
         }
     }
