@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("PokemonIVStats")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Stats Calculator for Pokemon Games (PGO not included).")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Mikkelzu Inc.")]
 [assembly: AssemblyProduct("PokemonIVStats")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
+[assembly: AssemblyCopyright("Copyright ©  Mikkelzu Inc. 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
