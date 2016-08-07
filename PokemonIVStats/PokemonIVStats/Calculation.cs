@@ -26,13 +26,12 @@ namespace PokemonIVStats
 
             double totalIv = (hp + atk + def + spatk + spdef + speed);
 
-            //155
             var perfectionIvPercent = (totalIv / totalMax) * 100;
 
             perfectionIvPercent = Math.Round(perfectionIvPercent);
 
             main.lblOutput.Content = perfectionIvPercent > 100 ? $"Wow your {pokemon.Name} has exceeded the maximum stats!\nThat can't be right.\nAt {perfectionIvPercent}%... are you sure?"
-                : $"Your {pokemon.Name}\nhas {perfectionIvPercent}% perfect IV's.";
+                : $"Your {pokemon.Name}\nis statistically {perfectionIvPercent}% perfect.";
         }
     }
 }

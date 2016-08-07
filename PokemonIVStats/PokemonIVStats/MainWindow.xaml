@@ -22,12 +22,12 @@
         <TextBox  Controls:TextBoxHelper.Watermark="Sp. Def"  x:Name="txtSpDef" HorizontalAlignment="Left" Height="23" Margin="10,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
         <TextBox  Controls:TextBoxHelper.Watermark="Speed"  x:Name="txtSpeed" HorizontalAlignment="Left" Height="23" Margin="10,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
         <Label x:Name="lblOutput" Content="" HorizontalAlignment="Left" Margin="211,360,0,0" VerticalAlignment="Top" Height="87" Width="432" FontSize="18"/>
-        <Label x:Name="lblHP" Content="" HorizontalAlignment="Left" Margin="257,74,0,0" VerticalAlignment="Top" Width="139"/>
-        <Label x:Name="lblAtk" Content="" HorizontalAlignment="Left" Margin="257,120,0,0" VerticalAlignment="Top" Width="139"/>
-        <Label x:Name="lblDef" Content="" HorizontalAlignment="Left" Margin="257,170,0,0" VerticalAlignment="Top" Width="139"/>
-        <Label x:Name="lblSpAtk" Content="" HorizontalAlignment="Left" Margin="257,214,0,0" VerticalAlignment="Top" Width="139"/>
-        <Label x:Name="lblSpDef" Content="" HorizontalAlignment="Left" Margin="257,263,0,0" VerticalAlignment="Top" Width="139"/>
-        <Label x:Name="lblSpeed" Content="" HorizontalAlignment="Left" Margin="257,307,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label x:Name="lblHP" Content="" HorizontalAlignment="Left" Margin="220,72,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label x:Name="lblAtk" Content="" HorizontalAlignment="Left" Margin="220,120,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label x:Name="lblDef" Content="" HorizontalAlignment="Left" Margin="220,170,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label x:Name="lblSpAtk" Content="" HorizontalAlignment="Left" Margin="220,214,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label x:Name="lblSpDef" Content="" HorizontalAlignment="Left" Margin="220,263,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label x:Name="lblSpeed" Content="" HorizontalAlignment="Left" Margin="220,312,0,0" VerticalAlignment="Top" Width="139"/>
 
     </Grid>
 
