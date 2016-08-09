@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("unusedcode-forlaterimplementation.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/badge_lv3.ico")]
 
 
