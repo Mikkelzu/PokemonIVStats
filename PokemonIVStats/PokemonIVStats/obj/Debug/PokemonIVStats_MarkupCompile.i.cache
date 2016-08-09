@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\AppDev\MyGitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\obj\Debug\
+C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\obj\Debug\
 PokemonIVStats
 none
 false
 DEBUG;TRACE
-D:\AppDev\MyGitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\App.xaml
+C:\Users\Michael\Documents\GitHub\PokemonIVStats\PokemonIVStats\PokemonIVStats\App.xaml
 3-1260861683
 
-131289845172
-151414964286
+13193048512
+151696732416
 MainWindow.xaml;Resources\Icons.xaml;Resources\IconsNonShared.xaml;
 
-False
+True
 

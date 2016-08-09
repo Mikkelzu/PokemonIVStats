@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("PokemonIVStats")]
 [assembly: AssemblyDescription("Stats Calculator for Pokemon Games (PGO not included).")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Mikkelzu Inc.")]
+[assembly: AssemblyCompany("TurtleXYZ")]
 [assembly: AssemblyProduct("PokemonIVStats")]
-[assembly: AssemblyCopyright("Copyright ©  Mikkelzu Inc. 2016")]
+[assembly: AssemblyCopyright("TurtleXYZ. 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
