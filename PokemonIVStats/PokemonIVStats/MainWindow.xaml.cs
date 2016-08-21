@@ -34,7 +34,7 @@ namespace PokemonIVStats
 
         public void InitAll()
         {
-            Pokemon.Init();
+            Pokemon.Initialize.Init();
             Nature.Init(); //does nothing yet
         }
 
@@ -80,7 +80,6 @@ namespace PokemonIVStats
             }
             else
             {
-
                 Calculation.CalcIVs(this, Convert.ToInt32(txtHP.Text), Convert.ToInt32(txtAttack.Text), Convert.ToInt32(txtDefense.Text),
                     Convert.ToInt32(txtSpAtk.Text), Convert.ToInt32(txtSpDef.Text),
                     Convert.ToInt32(txtSpeed.Text));
